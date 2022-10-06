@@ -1,0 +1,14 @@
+{
+  "extends": ["stylelint-config-htmlacademy", "stylelint-config-prettier"],
+  "rules": {
+    "indentation": "tab",
+    "number-leading-zero": null,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": ["composes"]
+      }
+    ],
+    "no-invalid-double-slash-comments": null
+  }
+}

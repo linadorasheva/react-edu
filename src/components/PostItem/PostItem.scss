@@ -1,0 +1,27 @@
+.post-item {
+	padding: 15px;
+	display: flex;
+	margin-bottom: 20px;
+	border: 2px solid $tomato;
+	border-radius: 4px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.post-item:last-child {
+	margin-bottom: 0;
+}
+
+.post-item__btns {
+	display: flex;
+}
+
+.post-item__btn {
+	margin-left: 12px;
+	padding: 4px 8px;
+	border-radius: 4px;
+}
+
+.post-item__btn--green {
+	background-color: $limegreen;
+}

@@ -1,0 +1,35 @@
+.navigation {
+	display: flex;
+	width: 80%;
+	margin: 0 auto 72px;
+	border-radius: 4px;
+}
+
+.navigation__list {
+	display: flex;
+	align-items: center;
+	margin-right: auto;
+}
+
+.navigation__item {
+	margin-left: -1px;
+	border: 1px solid $tomato;
+}
+
+.navigation__item:last-child {
+	margin-right: 0;
+}
+
+.navigation__link {
+	display: block;
+	padding: 8px;
+	color: $tomato;
+	font-size: 16px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.navigation__link--active {
+	background-color: $tomato;
+	color: $white;
+}

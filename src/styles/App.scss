@@ -1,0 +1,77 @@
+@import './variables.scss';
+@import '../components/AuthNav/AuthNav.scss';
+@import '../components/PostList/PostList.scss';
+@import '../components/PostItem/PostItem.scss';
+@import '../components/PostFilter/PostFilter.scss';
+@import '../components/PostForm/PostForm.scss';
+
+@import '../components/UI/button/MyButton.scss';
+@import '../components/UI/input/MyInput.scss';
+@import '../components/UI/loader/MyLoader.scss';
+@import '../components/UI/modal/MyModal.scss';
+@import '../components/UI/navigation/MyNavigation.scss';
+@import '../components/UI/pagination/MyPagination.scss';
+@import '../components/UI/select/MySelect.scss';
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+//  Todo replace to container
+#root {
+	display: flex;
+	flex-direction: column;
+	padding-top: 20px;
+}
+
+.posts-page,
+.error-page {
+	width: 80%;
+	margin: 0 auto;
+	padding: 0 0 60px;
+	position: relative;
+}
+
+.posts-page__btns {
+	display: flex;
+	margin-bottom: 30px;
+}
+
+.posts-page__btn {
+	margin-right: 8px;
+	border-radius: 4px;
+}
+
+.posts-page__btn--create {
+	background-color: $limegreen;
+}
+
+.loader-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* login */
+
+.form-login {
+	margin-bottom: 30px;
+}
+
+.form-login__btn {
+	padding: 4px 12px;
+	border-radius: 4px;
+}
+/* login end */

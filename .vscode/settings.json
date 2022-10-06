@@ -1,0 +1,5 @@
+{
+    "emmet.triggerExpansionOnTab": true,
+    "prettier.bracketSameLine": true,
+    "prettier.prettierPath": ""
+}
