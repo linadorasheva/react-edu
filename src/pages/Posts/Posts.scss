@@ -1,0 +1,23 @@
+.posts-page__btns {
+	display: flex;
+	margin-bottom: 30px;
+}
+
+.posts-page__btn {
+	margin-right: 8px;
+	border-radius: 4px;
+}
+
+.posts-page__btn--create {
+	background-color: $limegreen;
+}
+
+.posts-page__header {
+	display: flex;
+	align-items: center;
+}
+
+.posts-page__loader {
+	margin-top: -30px;
+	margin-left: 12px;
+}

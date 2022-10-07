@@ -1,17 +1,10 @@
 .loader {
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	border: 2px dotted $tomato;
-	animation: rotate 700ms linear infinite;
-}
-
-@keyframes rotate {
-	from {
-		transform: rotate(0deg);
-	}
-
-	to {
-		transform: rotate(360deg);
-	}
+	position: relative;
+  width: 20px;
+  height: 20px;
+  background-image: url('../../../images/icons/spinner.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  animation: lds-dual-ring 0.7s linear infinite;
 }

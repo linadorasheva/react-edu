@@ -1,0 +1,32 @@
+$sm-screen-up: 320px;
+$md-screen-up: 768px !default;
+$lg-screen-up: 1024px !default;
+$xl-screen-up: 1280px !default;
+$xxl-screen-up: 1440px !default;
+$xxxl-screen-up: 2000px !default;
+
+$sm-screen: 319px !default;
+$md-screen: 767px !default;
+$lg-screen: 1023px !default;
+$xl-screen: 1279px !default;
+$xxl-screen: 1439px !default;
+
+$sm-and-up: 'only screen and (min-width : #{$sm-screen-up})' !default; /*для 320 и больше*/
+$md-and-up: 'only screen and (min-width : #{$md-screen-up})' !default; /*для 768 и больше*/
+$lg-and-up: 'only screen and (min-width : #{$lg-screen-up})' !default; /*для 1024 и больше*/
+$xl-and-up: 'only screen and (min-width : #{$xl-screen-up})' !default; /*для 1280 и больше*/
+$xxl-and-up: 'only screen and (min-width : #{$xxl-screen-up})' !default; /*для 1440 и больше*/
+$xxxl-and-up: 'only screen and (min-width : #{$xxxl-screen-up})' !default; /*для 2000 и больше*/
+
+$sm-and-down: 'only screen and (max-width : #{$sm-screen})' !default; /*для 320 и меньше*/
+$md-and-down: 'only screen and (max-width : #{$md-screen})' !default; /*для 768 и меньше*/
+$lg-and-down: 'only screen and (max-width : #{$lg-screen})' !default; /*для 1024 и меньше*/
+$xl-and-down: 'only screen and (max-width : #{$xl-screen})' !default; /*для 1280 и меньше*/
+$xxl-and-down: 'only screen and (max-width : #{$xxl-screen})' !default; /*для 1440 и меньше*/
+
+$touch-devices-only: 'only screen and (min-width : #{$sm-screen-up}) and (max-width : #{$xl-screen})' !default; /*для ширин между 320 и 1279*/
+$small-only: 'only screen and (min-width : #{$sm-screen-up}) and (max-width : #{$md-screen})' !default; /*для ширин между 320 и 767*/
+$medium-only: 'only screen and (min-width : #{$md-screen-up}) and (max-width : #{$lg-screen})' !default; /*для ширин между 768 и 1023*/
+$medium-and-large-only: 'only screen and (min-width : #{$md-screen-up}) and (max-width : #{$xl-screen})' !default; /*для ширин между 768 и 1279*/
+$large-only: 'only screen and (min-width : #{$lg-screen-up}) and (max-width : #{$xl-screen})' !default; /*для ширин между 1024 и 1279*/
+$extra-large-only: 'only screen and (min-width : #{$xl-screen-up}) and (max-width : #{$xxl-screen})' !default; /*для ширин между 1280 и 1439*/

@@ -1,14 +1,45 @@
 {
-  "extends": ["stylelint-config-htmlacademy", "stylelint-config-prettier"],
+  "plugins": [
+    "stylelint-config-prettier",
+    "stylelint-scss",
+    "stylelint-value-no-unknown-custom-properties",
+    "stylelint-at-rule-no-children",
+    "stylelint-declaration-block-no-ignored-properties",
+    "stylelint-media-use-custom-media"
+  ],
+  "ignoreFiles": ["normalize.scss", "reset.scss"],
+  "defaultSeverity": "error",
   "rules": {
-    "indentation": "tab",
-    "number-leading-zero": null,
-    "property-no-unknown": [
+    "annotation-no-unknown": null,
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "plugin/declaration-block-no-ignored-properties": true,
+    "block-no-empty": true,
+    "color-named": "never",
+    "color-no-invalid-hex": true,
+    "comment-no-empty": true,
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-block-no-shorthand-property-overrides": true,
+    "declaration-property-value-blacklist": {
+      "/^margin/": ["initial"],
+      "/^padding/": ["initial"],
+      "flex-grow": ["initial"]
+    },
+    "function-calc-no-unspaced-operator": true,
+    "function-linear-gradient-no-nonstandard-direction": true,
+    "no-duplicate-selectors": true,
+    "no-invalid-double-slash-comments": true,
+    "property-blacklist": ["flex"],
+    "property-no-unknown": true,
+    "selector-max-universal": 1,
+    "selector-pseudo-element-no-unknown": true,
+    "selector-pseudo-class-no-unknown": [
       true,
       {
-        "ignoreProperties": ["composes"]
+        "ignorePseudoClasses": ["global", "local"]
       }
     ],
-    "no-invalid-double-slash-comments": null
+    "shorthand-property-no-redundant-values": true,
+    "string-no-newline": true
   }
 }
