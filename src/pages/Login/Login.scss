@@ -1,0 +1,19 @@
+.login-page__title {
+	@media #{$md-and-up} {
+		text-align: center;
+	}
+}
+
+.login-page__form {
+	margin-bottom: 30px;
+
+	@media #{$md-and-up} {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+}
+
+.login-page__btn {
+	padding: 4px 12px;
+	border-radius: 4px;
+}

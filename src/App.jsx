@@ -3,13 +3,13 @@ import { Routes, Route } from 'react-router-dom';
 
 import AuthProvider from './hoc/AuthProvider.jsx';
 import RequireAuth from './hoc/RequireAuth.jsx';
-import About from './pages/About.jsx';
-import ErrorPage from './pages/ErrorPage.jsx';
+import About from './pages/About/About.jsx';
+import ErrorPage from './pages/ErrorPage/ErrorPage.jsx';
 import Layout from './pages/Layout.jsx';
-import Login from './pages/Login.jsx';
-import Main from './pages/Main.jsx';
+import Login from './pages/Login/Login.jsx';
+import Main from './pages/Main/Main.jsx';
 import Post from './pages/Post.jsx';
-import Posts from './pages/Posts.jsx';
+import Posts from './pages/Posts/Posts.jsx';
 
 function App() {
   return (

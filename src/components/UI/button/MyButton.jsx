@@ -10,7 +10,7 @@ const MyButton = ({ children, ...props }) => {
 };
 
 MyButton.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
 };
 

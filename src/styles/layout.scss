@@ -1,0 +1,33 @@
+.layout {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: 20px 0 60px;
+
+	&__header {
+		margin-bottom: 54px;
+	}
+} 
+
+.container {
+  position: relative;
+  width: 100%;
+	padding: 0 16px;
+  margin: 0 auto;
+
+  @media #{$md-and-up} {
+    max-width: 720px;
+  }
+
+  @media #{$lg-and-up} {
+    max-width: 940px;
+  }
+
+  @media #{$xl-and-up} {
+    max-width: 1192px;
+  }
+
+  @media #{$xxl-and-up} {
+    max-width: 1276px;
+  }
+}

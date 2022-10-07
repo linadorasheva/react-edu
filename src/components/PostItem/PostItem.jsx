@@ -10,10 +10,10 @@ const PostItem = ({ post, number, remove }) => {
   return (
     <div className="post-item">
       <div className="post-item__content">
-        <strong>
+        <h3 className='post-item__title'>
           {number}. {post.title}
-        </strong>
-        <div>{post.body}</div>
+        </h3>
+        <p className='post-item__body'>{post.body}</p>
       </div>
       <div className="post-item__btns">
         <MyButton

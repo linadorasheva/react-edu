@@ -4,14 +4,13 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import PostItem from '../PostItem/PostItem.jsx';
 
-const PostList = ({ posts, title, remove }) => {
+const PostList = ({ posts, remove }) => {
   if (!posts.length) {
-    return <h1 style={{ textAlign: 'center' }}> Posts not found</h1>;
+    return <p> Posts not found</p>;
   }
 
   return (
     <div className="post-list">
-      <h1 className="post-list__header">{title}</h1>
 
       <TransitionGroup>
         {posts.map((post) => (
@@ -30,7 +29,6 @@ const PostList = ({ posts, title, remove }) => {
 
 PostList.propTypes = {
   posts: PropTypes.array.isRequired,
-  title: PropTypes.string.isRequired,
   remove: PropTypes.func.isRequired,
 };
 
