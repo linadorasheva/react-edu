@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import PostService from '../../API/PostService.js';
 import PostFilter from '../../components/PostFilter/PostFilter.jsx';
@@ -9,6 +9,7 @@ import MyLoader from '../../components/UI/loader/MyLoader.jsx';
 import MyModal from '../../components/UI/modal/MyModal.jsx';
 import MyPagination from '../../components/UI/pagination/MyPagination.jsx';
 import { useFetching } from '../../hooks/useFetching';
+import { useObserver } from '../../hooks/useObserver.js';
 import { usePosts } from '../../hooks/usePosts';
 import { getPageCount } from '../../utils/pages';
 
@@ -20,11 +21,13 @@ function Posts() {
   const [totalPages, setTotalPages] = useState(0);
   const [limit] = useState(10);
   const [page, setPage] = useState(1);
+  const lastElement = useRef();
 
   const [fetchPosts, isPostLoading, postLoadingError] = useFetching(
     async (limit, page) => {
       const response = await PostService.getAll(limit, page);
       setPosts([...posts, ...response.data]);
+
       const totalCount = response.headers['x-total-count'];
       setTotalPages(getPageCount(totalCount, limit));
     }
@@ -32,9 +35,13 @@ function Posts() {
 
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
 
+  useObserver(lastElement, page < totalPages, isPostLoading, () => {
+    setPage(page + 1);
+  });
+
   useEffect(() => {
     fetchPosts(limit, page);
-  }, []);
+  }, [page]);
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
@@ -47,7 +54,6 @@ function Posts() {
 
   const changePage = (page) => {
     setPage(page);
-    fetchPosts(limit, page);
   };
 
   return (
@@ -77,11 +83,10 @@ function Posts() {
           )}
         </div>
 
-        {postLoadingError && 
-          <p>Posts loading error: {postLoadingError}</p>
-        }
+        {postLoadingError && <p>Posts loading error: {postLoadingError}</p>}
 
         <PostList remove={removePost} posts={sortedAndSearchedPosts} />
+        <div ref={lastElement} />
         <MyPagination
           totalPages={totalPages}
           page={page}
