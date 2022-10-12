@@ -10,10 +10,12 @@ const PostForm = ({ create }) => {
   const addNewPost = (evt) => {
     evt.preventDefault();
 
-    create({
-      ...post,
-      id: Date.now(),
-    });
+    if (post.title.trim() && post.body.trim()) {
+      create({
+        ...post,
+        id: Date.now(),
+      });
+    }
 
     setPost({ title: '', body: '' });
   };
@@ -32,7 +34,13 @@ const PostForm = ({ create }) => {
         type="text"
         placeholder="input description"
       />
-      <MyButton onClick={addNewPost} className='form__button'>Create Post</MyButton>
+      <MyButton
+        disabled={!post.title || !post.body ? true : false}
+        onClick={addNewPost}
+        className="form__button"
+      >
+        Create Post
+      </MyButton>
     </form>
   );
 };

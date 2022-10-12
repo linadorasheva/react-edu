@@ -8,13 +8,17 @@
 	margin-bottom: 15px;
 }
 
-.form__button {
+button.form__button {
 	align-self: center;
 	height: 30px;
-	background-color: $tomato;
+	background-color: $limegreen;
 	border: none;
 	width: 200px;
 	color: $white;
 	font-size: 14px;
 	border-radius: 4px;
+
+	&:disabled {
+		background-color: $light-grey;
+	}
 }
