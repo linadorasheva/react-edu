@@ -8,7 +8,7 @@ import ErrorPage from './pages/ErrorPage/ErrorPage.jsx';
 import Layout from './pages/Layout.jsx';
 import Login from './pages/Login/Login.jsx';
 import Main from './pages/Main/Main.jsx';
-import Post from './pages/Post.jsx';
+import Post from './pages/Post/Post.jsx';
 import Posts from './pages/Posts/Posts.jsx';
 
 function App() {

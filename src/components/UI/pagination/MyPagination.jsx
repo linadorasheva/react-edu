@@ -1,25 +1,25 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { getPagesArray } from '../../../utils/pages';
-
-const MyPagination = ({ totalPages, page, changePage }) => {
-  // TODO useMemo & getPagesArray вынести в хук
-  let pagesArray = getPagesArray(totalPages);
+const MyPagination = ({ pages, pageNumber, changePage }) => {
 
   return (
     <div className="pagination">
-      {pagesArray.map((item) => (
+      {pages.map((item) => (
         <button
-          key={item}
+          key={item.pageIndex}
           onClick={() => changePage(item)}
           className={
-            page === item
+            pageNumber === item.pageNumber && !item.icon
               ? 'pagination__item pagination__item--current'
               : 'pagination__item'
           }
         >
-          {item}
+          {item.icon ? (
+            <span className={`pagination__icon ${item.iconClass}`} />
+          ) : (
+            <span>{item.pageNumber}</span>
+          )}
         </button>
       ))}
     </div>
@@ -27,8 +27,8 @@ const MyPagination = ({ totalPages, page, changePage }) => {
 };
 
 MyPagination.propTypes = {
-  totalPages: PropTypes.number.isRequired,
-  page: PropTypes.number.isRequired,
+  pages: PropTypes.array.isRequired,
+  pageNumber: PropTypes.number.isRequired,
   changePage: PropTypes.func.isRequired,
 };
 

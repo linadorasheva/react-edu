@@ -1,27 +1,38 @@
 .pagination {
-	display: flex;
-	justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .pagination__item {
-	width: 30px;
-	height: 30px;
-	margin-right: 4px;
-	padding: 5px;
-	background-color: transparent;
-	border: 2px solid $tomato;
-	text-align: center;
-	cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin-right: 4px;
+  padding: 5px;
+  background-color: transparent;
+  border: 2px solid $tomato;
+  text-align: center;
+  cursor: pointer;
 }
 
 .pagination__item:hover {
-	background-color: $tomato;
-	color: $white;
-	transition: all 150ms ease-in;
+  background-color: $tomato;
+  color: $white;
+  transition: all 150ms ease-in;
 }
 
 .pagination__item--current {
-	background-color: $tomato;
-	color: $white;
-	cursor: default;
+  background-color: $tomato;
+  color: $white;
+  cursor: default;
+}
+
+.pagination__icon {
+	&::before {
+		content: '\25BA';
+	}
+
+	&.prev {
+		display: block;
+		transform: rotate(180deg);
+	}
 }
